@@ -14,7 +14,7 @@ class NetworkInfo(BaseModel):
 class NetworksInfo(BaseModel):
     scan_results: Optional[List[NetworkInfo]] = None
 
-@app.post("/location/")
+@app.post("/location")
 def getRoomPrediction(networksInfo: NetworksInfo):
     if not RM.trained():
         RM.train()
