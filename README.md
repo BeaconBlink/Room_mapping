@@ -20,5 +20,5 @@ pip install -r requirements.txt
 ```
 ### Development start Python server
 ```bash
-uvicorn Server:app --host 0.0.0.0 --port 8082 --reload
+uvicorn Server:app --host 0.0.0.0 --port 8083 --reload
 ```
