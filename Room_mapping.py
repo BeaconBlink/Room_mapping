@@ -31,7 +31,7 @@ class RoomMapper:
             for scan in room["scan_results"]:
                 self.Y.append(room["name"])
                 for network in scan:
-                    self.allNetworks.add(network["ssid"])
+                    self.allNetworks.add(network["bssid"])
 
         df = pd.DataFrame(-100, index=range(numberOfAllScans), columns=list(self.allNetworks))
         self.Y = pd.DataFrame(self.Y)
@@ -41,8 +41,8 @@ class RoomMapper:
         for room in self.data.find():
             for scan in room["scan_results"]:
                 for network in scan:
-                    df.loc[index, network["ssid"]] = network["rssi"]
-                    # print("DLA SSID: ", network["ssid"] , " MOC: ", network["rssi"], flush=True)
+                    df.loc[index, network["bssid"]] = network["rssi"]
+                    # print("DLA BSSID: ", network["bssid"] , " MOC: ", network["rssi"], flush=True)
                 index += 1
 
         self.Y = self.Y.values.ravel()
@@ -54,8 +54,8 @@ class RoomMapper:
         X_predict = pd.DataFrame(-100, index=range(1), columns=list(self.allNetworks))
         
         for scan in scanResults.scan_results:
-            if scan.ssid in self.allNetworks:
-                X_predict.loc[0, scan.ssid] = scan.rssi
+            if scan.bssid in self.allNetworks:
+                X_predict.loc[0, scan.bssid] = scan.rssi
 
         tmp = self.knn.predict(X_predict)
         print("RESULTS: ", tmp, flush=True)
