@@ -14,13 +14,15 @@ class NetworkInfo(BaseModel):
 class NetworksInfo(BaseModel):
     scan_results: Optional[List[NetworkInfo]] = None
 
+class ChangeModeBody(BaseModel):
+    mode: bool
+
 @app.post("/location/mode")
-def changeMode(mode: bool):
-    if not RM.trained() and mode:
+def changeMode(body: ChangeModeBody):
+    if not RM.trained() and body["mode"]:
         RM.train()
     return {"trained" : True}
     
-
 
 @app.post("/location")
 def getRoomPrediction(networksInfo: NetworksInfo):
