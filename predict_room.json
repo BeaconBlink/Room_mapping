@@ -1,0 +1,234 @@
+    {
+        "scan_results": [
+            {
+                "ssid": "boolik",
+                "rssi": -48,
+                "bssid": "68:02:B8:7A:23:B7"
+            },
+            {
+                "ssid": "UPC9998819",
+                "rssi": -60,
+                "bssid": "34:2C:C4:AC:34:77"
+            },
+            {
+                "ssid": "PLAY_Swiatlowodowy_9909",
+                "rssi": -67,
+                "bssid": "18:34:AF:A6:99:0B"
+            },
+            {
+                "ssid": "UPC0042280",
+                "rssi": -72,
+                "bssid": "80:C6:AB:1D:71:AF"
+            },
+            {
+                "ssid": "Wi-Free #InternetUPCNajszybszy",
+                "rssi": -72,
+                "bssid": "82:C6:AB:1D:71:A1"
+            },
+            {
+                "ssid": "UPCE44FBE5",
+                "rssi": -73,
+                "bssid": "54:67:51:C5:A6:15"
+            },
+            {
+                "ssid": "UPC7303847",
+                "rssi": -73,
+                "bssid": "E4:57:40:D4:00:7E"
+            },
+            {
+                "ssid": "PLAY_Swiatlowodowy_F5F7",
+                "rssi": -77,
+                "bssid": "18:34:AF:A4:F5:F9"
+            },
+            {
+                "ssid": "Nila17/60",
+                "rssi": -78,
+                "bssid": "18:34:AF:A4:CE:BC"
+            },
+            {
+                "ssid": "NETIASPOT-AZh8",
+                "rssi": -78,
+                "bssid": "AC:99:29:4D:AD:90"
+            },
+            {
+                "ssid": "Dla_Gosci",
+                "rssi": -79,
+                "bssid": "B6:95:75:D4:BD:84"
+            },
+            {
+                "ssid": "internet",
+                "rssi": -80,
+                "bssid": "B0:95:75:D4:BD:83"
+            },
+            {
+                "ssid": "UPC8202864",
+                "rssi": -80,
+                "bssid": "34:2C:C4:0D:C0:53"
+            },
+            {
+                "ssid": "UPC2C6DD8",
+                "rssi": -80,
+                "bssid": "F0:F2:49:DC:6D:D8"
+            },
+            {
+                "ssid": "PLAY_Swiatlowodowy_40D5",
+                "rssi": -81,
+                "bssid": "5C:7B:5C:38:40:D6"
+            },
+            {
+                "ssid": "Tech_D0056970",
+                "rssi": -83,
+                "bssid": "08:95:2A:5D:47:A3"
+            },
+            {
+                "ssid": "NETIASPOT-2.4GHz-Hs4S",
+                "rssi": -83,
+                "bssid": "C4:D4:38:6E:A8:4C"
+            },
+            {
+                "ssid": "UPCFD298F1",
+                "rssi": -84,
+                "bssid": "90:5C:44:83:61:A0"
+            },
+            {
+                "ssid": "UPCF82CC54",
+                "rssi": -84,
+                "bssid": "AC:22:05:5D:AC:AB"
+            },
+            {
+                "ssid": "NETIASPOT-kkPTA23-2.4G",
+                "rssi": -84,
+                "bssid": "60:3D:26:8C:8E:5F"
+            },
+            {
+                "ssid": "UPC5757106",
+                "rssi": -85,
+                "bssid": "E4:57:40:AB:B5:52"
+            },
+            {
+                "ssid": "UPC7748231",
+                "rssi": -85,
+                "bssid": "64:FD:96:4F:94:14"
+            },
+            {
+                "ssid": "UPC9700663",
+                "rssi": -85,
+                "bssid": "38:43:7D:EE:3E:CC"
+            },
+            {
+                "ssid": "UPC5201768",
+                "rssi": -85,
+                "bssid": "64:7C:34:9C:66:83"
+            },
+            {
+                "ssid": "PLAY_Swiatlowodowy_E683",
+                "rssi": -85,
+                "bssid": "5C:7B:5C:47:E6:84"
+            },
+            {
+                "ssid": "UPC9EB945B",
+                "rssi": -86,
+                "bssid": "90:5C:44:56:3D:2D"
+            },
+            {
+                "ssid": "UPC249702452",
+                "rssi": -87,
+                "bssid": "8C:5B:F0:EC:EE:1D"
+            },
+            {
+                "ssid": "PLAY_Swiatlowodowy_8B06",
+                "rssi": -88,
+                "bssid": "18:34:AF:A4:8B:08"
+            },
+            {
+                "ssid": "ZWIREK KRECI Z MUCHOMORKIEM 2",
+                "rssi": -89,
+                "bssid": "B4:9D:FD:C3:89:13"
+            },
+            {
+                "ssid": "UPC247583607",
+                "rssi": -89,
+                "bssid": "E8:82:5B:7A:40:36"
+            },
+            {
+                "ssid": "NETIASPOT-6Vu5",
+                "rssi": -89,
+                "bssid": "C6:D4:38:B0:65:60"
+            },
+            {
+                "ssid": "UPC1133141",
+                "rssi": -89,
+                "bssid": "34:2C:C4:59:37:90"
+            },
+            {
+                "ssid": "UPCDEA83EC",
+                "rssi": -90,
+                "bssid": "90:5C:44:03:3D:D7"
+            },
+            {
+                "ssid": "UPC5605189",
+                "rssi": -90,
+                "bssid": "AC:F8:CC:C9:C5:47"
+            },
+            {
+                "ssid": "Tech_D0049500",
+                "rssi": -90,
+                "bssid": "58:23:8C:F1:1D:62"
+            },
+            {
+                "ssid": "Patrycja",
+                "rssi": -91,
+                "bssid": "38:43:7D:F1:7D:FF"
+            },
+            {
+                "ssid": "Miraflores",
+                "rssi": -91,
+                "bssid": "54:67:51:CB:A7:DE"
+            },
+            {
+                "ssid": "UPC756D7BA",
+                "rssi": -91,
+                "bssid": "90:5C:44:9A:E5:BD"
+            },
+            {
+                "ssid": "UPC91A862F",
+                "rssi": -91,
+                "bssid": "AC:22:05:76:CD:5B"
+            },
+            {
+                "ssid": "TP-LINK_0DBC",
+                "rssi": -91,
+                "bssid": "84:16:F9:43:0D:BC"
+            },
+            {
+                "ssid": "UPC2400530",
+                "rssi": -92,
+                "bssid": "34:2C:C4:A8:5B:D6"
+            },
+            {
+                "ssid": "UPC9457364",
+                "rssi": -93,
+                "bssid": "34:2C:C4:C3:D1:21"
+            },
+            {
+                "ssid": "SmartLife-6837ca",
+                "rssi": -93,
+                "bssid": "20:67:E0:70:62:68"
+            },
+            {
+                "ssid": "UPC68DE67B",
+                "rssi": -94,
+                "bssid": "AC:22:05:85:10:4A"
+            },
+            {
+                "ssid": "UPC3DA2FB3",
+                "rssi": -95,
+                "bssid": "AC:22:05:C5:6D:D0"
+            },
+            {
+                "ssid": "UPCADF513A",
+                "rssi": -96,
+                "bssid": "90:5C:44:9E:4F:52"
+            }
+        ]
+    }
