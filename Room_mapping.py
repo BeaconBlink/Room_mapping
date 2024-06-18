@@ -13,11 +13,10 @@ class RoomMapper:
 
         self.client = pymongo.MongoClient("mongodb://root:example@mongo:27017/")
         self.db = self.client["beacon_blink"]
-        self.data = self.db["rooms"].find()
+        self.data = self.db["rooms"]
         
         self.X = []
         self.Y = []
-
 
     def trained(self):
         return self.isTrained
@@ -27,7 +26,7 @@ class RoomMapper:
 
         numberOfAllScans = 0
 
-        for room in self.data:
+        for room in self.data.find():
             numberOfAllScans += len(room["scan_results"])
             for scan in room["scan_results"]:
                 self.Y.append(room["name"])
@@ -38,10 +37,12 @@ class RoomMapper:
         self.Y = pd.DataFrame(self.Y)
 
         index = 0
-        for scanResults in self.data:
-            for scan in scanResults["scan_results"]:
+
+        for room in self.data.find():
+            for scan in room["scan_results"]:
                 for network in scan:
                     df.loc[index, network["ssid"]] = network["rssi"]
+                    # print("DLA SSID: ", network["ssid"] , " MOC: ", network["rssi"], flush=True)
                 index += 1
 
         self.Y = self.Y.values.ravel()

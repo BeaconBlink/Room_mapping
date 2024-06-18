@@ -19,6 +19,7 @@ class ChangeModeBody(BaseModel):
 
 @app.post("/location/mode")
 def changeMode(body: ChangeModeBody):
+    print("MODE: ", body.mode, flush=True)
     if not RM.trained() and body.mode:
         RM.train()
     return {"trained" : True}
