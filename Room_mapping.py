@@ -7,7 +7,7 @@ import json
 
 class RoomMapper:
     def __init__(self):
-        self.knn = KNeighborsClassifier(n_neighbors=2)
+        self.knn = KNeighborsClassifier(n_neighbors=1)
         self.isTrained = False
         self.allNetworks = set()
 
@@ -17,14 +17,13 @@ class RoomMapper:
         
         self.X = []
         self.Y = []
-        self.train()
+
 
     def trained(self):
         return self.isTrained
     
     def train(self):
-        # with open('rooms_3.json', 'r') as file:
-            # self.data = json.load(file)
+        print("MODEL IS TRAINING", flush=True)
 
         numberOfAllScans = 0
 
@@ -47,24 +46,20 @@ class RoomMapper:
 
         self.Y = self.Y.values.ravel()
 
-        print("Y", self.Y, flush=True)
-        print("DF: ", df, flush=True)
-
         self.knn.fit(df, self.Y)
         self.isTrained = True
 
     def getDeviceLocation(self, scanResults):
-
-        X_predict = pd.DataFrame(-100, index=range(len(scanResults["scan_results"])), columns=list(self.allNetworks))
-
-        for scan in scanResults["scan_results"]:
-            if scan["ssid"] in self.allNetworks:
-                X_predict.loc[0, scan["ssid"]] = scan["rssi"]
+        X_predict = pd.DataFrame(-100, index=range(1), columns=list(self.allNetworks))
+        
+        for scan in scanResults.scan_results:
+            if scan.ssid in self.allNetworks:
+                X_predict.loc[0, scan.ssid] = scan.rssi
 
         tmp = self.knn.predict(X_predict)
+        print("RESULTS: ", tmp, flush=True)
         
-        return tmp
-
+        return tmp[0]
 
 if __name__ == "__main__":
     RM = RoomMapper()
