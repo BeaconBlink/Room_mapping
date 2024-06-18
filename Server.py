@@ -14,10 +14,17 @@ class NetworkInfo(BaseModel):
 class NetworksInfo(BaseModel):
     scan_results: Optional[List[NetworkInfo]] = None
 
+@app.post("/location/mode")
+def changeMode(mode: bool):
+    if not RM.trained() and mode:
+        RM.train()
+    return {"trained" : True}
+    
+
+
 @app.post("/location")
 def getRoomPrediction(networksInfo: NetworksInfo):
     if not RM.trained():
-        RM.train()
         raise HTTPException(status_code=404, detail="Model is not trained yet")
     
     room = RM.getDeviceLocation(networksInfo)

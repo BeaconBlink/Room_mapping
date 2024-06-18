@@ -11,23 +11,20 @@ class RoomMapper:
         self.isTrained = False
         self.allNetworks = set()
 
-        # self.client = pymongo.MongoClient("mongodb://root:example@deployment_default:27017/beacon_blink?authSource=admin")
-        # self.db = self.client["beacon_blink"]
+        self.client = pymongo.MongoClient("mongodb://root:example@mongo:27017/")
+        self.db = self.client["beacon_blink"]
+        self.data = self.db["rooms"].find()
         
         self.X = []
         self.Y = []
+        self.train()
 
     def trained(self):
         return self.isTrained
     
     def train(self):
-        # print("SERVER INFO: ", self.client.server_info())
-        # print("DATABASE: ", self.client.list_database_names())
-
-        # self.data = self.db["rooms"]
-
-        with open('rooms_3.json', 'r') as file:
-            self.data = json.load(file)
+        # with open('rooms_3.json', 'r') as file:
+            # self.data = json.load(file)
 
         numberOfAllScans = 0
 
@@ -50,14 +47,13 @@ class RoomMapper:
 
         self.Y = self.Y.values.ravel()
 
-        self.knn.fit(df, self.Y)
+        print("Y", self.Y, flush=True)
+        print("DF: ", df, flush=True)
 
+        self.knn.fit(df, self.Y)
         self.isTrained = True
 
     def getDeviceLocation(self, scanResults):
-        
-        with open('predict_room_2.json', 'r') as file:
-            scanResults = json.load(file)
 
         X_predict = pd.DataFrame(-100, index=range(len(scanResults["scan_results"])), columns=list(self.allNetworks))
 
