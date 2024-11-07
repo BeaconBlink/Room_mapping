@@ -1,8 +1,6 @@
-from sklearn.neighbors import KNeighborsClassifier
 import pandas as pd
 import pymongo
-import urllib.parse
-import json
+from sklearn.neighbors import KNeighborsClassifier
 
 
 class RoomMapper:
@@ -14,26 +12,26 @@ class RoomMapper:
         self.client = pymongo.MongoClient("mongodb://root:example@mongo:27017/")
         self.db = self.client["beacon_blink"]
         self.data = self.db["rooms"]
-        
+
         self.X = []
         self.Y = []
 
     def trained(self):
         return self.isTrained
-    
+
     def train(self):
         print("MODEL IS TRAINING", flush=True)
 
-        numberOfAllScans = 0
+        number_of_all_scans = 0
 
         for room in self.data.find():
-            numberOfAllScans += len(room["scan_results"])
+            number_of_all_scans += len(room["scan_results"])
             for scan in room["scan_results"]:
                 self.Y.append(room["name"])
                 for network in scan:
                     self.allNetworks.add(network["bssid"])
 
-        df = pd.DataFrame(-100, index=range(numberOfAllScans), columns=list(self.allNetworks))
+        df = pd.DataFrame(-100, index=range(number_of_all_scans), columns=list(self.allNetworks))
         self.Y = pd.DataFrame(self.Y)
 
         index = 0
@@ -50,19 +48,20 @@ class RoomMapper:
         self.knn.fit(df, self.Y)
         self.isTrained = True
 
-    def getDeviceLocation(self, scanResults):
+    def get_device_location(self, scan_results):
         X_predict = pd.DataFrame(-100, index=range(1), columns=list(self.allNetworks))
-        
-        for scan in scanResults.scan_results:
+
+        for scan in scan_results.scan_results:
             if scan.bssid in self.allNetworks:
                 X_predict.loc[0, scan.bssid] = scan.rssi
 
         tmp = self.knn.predict(X_predict)
         print("RESULTS: ", tmp, flush=True)
-        
+
         return tmp[0]
+
 
 if __name__ == "__main__":
     RM = RoomMapper()
     RM.train()
-    print(RM.getDeviceLocation(None))
+    print(RM.get_device_location(None))
