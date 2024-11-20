@@ -27,7 +27,7 @@ class RoomMapper:
         for room in self.data.find():
             number_of_all_scans += len(room["scan_results"])
             for scan in room["scan_results"]:
-                self.Y.append(room["name"])
+                self.Y.append(room["_id"])
                 for network in scan:
                     self.allNetworks.add(network["bssid"])
 
