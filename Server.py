@@ -37,7 +37,7 @@ def get_room_prediction(networks_info: NetworksInfo):
         raise HTTPException(status_code=404, detail="Model is not trained yet")
 
     room = RM.get_device_location(networks_info)
-    return {"name": room}
+    return {"id": room}
 
 
 if __name__ == '__main__':
