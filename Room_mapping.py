@@ -19,6 +19,13 @@ class RoomMapper:
     def trained(self):
         return self.isTrained
 
+    def retrain(self):
+        if self.isTrained:
+            self.isTrained = False
+            self.knn = KNeighborsClassifier(n_neighbors=1)
+
+        self.train()
+
     def train(self):
         print("MODEL IS TRAINING", flush=True)
 
