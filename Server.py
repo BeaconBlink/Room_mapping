@@ -39,7 +39,7 @@ def get_room_prediction(networks_info: NetworksInfo):
     room = RM.get_device_location(networks_info)
     return {"id": room}
 
-@app.post("retrain")
+@app.post("/retrain")
 def retrain_model():
     RM.retrain()
     return {"retrained": True}
