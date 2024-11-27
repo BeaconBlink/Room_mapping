@@ -22,7 +22,10 @@ class RoomMapper:
     def retrain(self):
         if self.isTrained:
             self.isTrained = False
+            self.allNetworks = set()
             self.knn = KNeighborsClassifier(n_neighbors=1)
+            self.X = []
+            self.Y = []
 
         self.train()
 
