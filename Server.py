@@ -34,7 +34,7 @@ def change_mode(body: ChangeModeBody):
 @app.post("/location")
 def get_room_prediction(networks_info: NetworksInfo):
     if not RM.trained():
-        raise HTTPException(status_code=404, detail="Model is not trained yet")
+        raise HTTPException(status_code=503, detail="Model is not trained yet")
 
     room = RM.get_device_location(networks_info)
     return {"id": room}
