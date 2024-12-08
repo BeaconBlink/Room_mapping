@@ -32,6 +32,10 @@ class RoomMapper:
     def train(self):
         print("MODEL IS TRAINING", flush=True)
 
+        if self.data.count_documents({}) == 0:
+            print("Database is empty. Model cannot be trained", flush=True)
+            return
+
         number_of_all_scans = 0
 
         for room in self.data.find():
