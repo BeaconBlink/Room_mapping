@@ -5,7 +5,7 @@ from sklearn.neighbors import KNeighborsClassifier
 
 class RoomMapper:
     def __init__(self):
-        self.knn = KNeighborsClassifier(n_neighbors=1)
+        self.knn = KNeighborsClassifier(n_neighbors=2)
         self.isTrained = False
         self.allNetworks = set()
 
@@ -23,7 +23,7 @@ class RoomMapper:
         if self.isTrained:
             self.isTrained = False
             self.allNetworks = set()
-            self.knn = KNeighborsClassifier(n_neighbors=1)
+            self.knn = KNeighborsClassifier(n_neighbors=2)
             self.X = []
             self.Y = []
 
